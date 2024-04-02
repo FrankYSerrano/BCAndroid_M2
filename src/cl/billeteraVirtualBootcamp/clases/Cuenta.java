@@ -104,15 +104,15 @@ public class Cuenta {
         int saldoCLP;
         System.out.print("Por favor introduzca el monto en CLP a depositar: ");
         saldoCLP = scannerDatos.nextInt();
-        this.saldoCLP = incrementaSaldoCLP(saldoCLP);
+        this.saldoCLP = this.saldoCLP + saldoCLP;
         System.out.println("Su nuevo saldo de CLP es: " + this.getSaldoCLP());
     }
 
-    /** Metodo creado para incrementar el saldo. Para los Tests
+    /** Método que permite incrementar el saldo en CLP de la cuenta. Para los Tests
      * @param saldoCLP
      * @return
      */
-    public int incrementaSaldoCLP (int saldoCLP){
+    public int agregarSaldoCLP (int saldoCLP){
         return this.saldoCLP + saldoCLP;
     }
     /**
@@ -124,7 +124,7 @@ public class Cuenta {
         System.out.print("Por favor introduzca el monto en CLP a retirar: ");
         saldoARetirarCLP = scannerDatos.nextInt();
         if (saldoARetirarCLP <= this.saldoCLP){
-            this.saldoCLP = this.restaSaldoCLP(saldoARetirarCLP);
+            this.saldoCLP = this.saldoCLP - saldoARetirarCLP;
             System.out.println("Operación EXITOSA!");
             System.out.println(" Su nuevo saldo de CLP es: " + this.getSaldoCLP());
         }else{
@@ -132,11 +132,11 @@ public class Cuenta {
         }
     }
 
-    /** Metodo creado para disminuir saldop CLP. Para los Tests
+    /** Método para retirar CLPs de la cuenta por parámetro. Para los tests
      * @param saldoCLP
      * @return
      */
-    public int restaSaldoCLP(int saldoCLP){
+    public int retirarSaldoCLP(int saldoCLP){
         return this.saldoCLP - saldoCLP;
     }
     /**

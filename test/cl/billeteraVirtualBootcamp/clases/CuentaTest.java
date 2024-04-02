@@ -10,7 +10,7 @@ class CuentaTest {
     void incrementaSaldoCLP() {
         Cuenta cuentaPrueba = new Cuenta("F",26216,
                 0,0,0);
-        cuentaPrueba.setSaldoCLP(cuentaPrueba.incrementaSaldoCLP(3));
+        cuentaPrueba.setSaldoCLP(cuentaPrueba.agregarSaldoCLP(3));
         assertEquals(3, cuentaPrueba.getSaldoCLP());
     }
 
@@ -18,7 +18,7 @@ class CuentaTest {
     void restaSaldoCLP() {
         Cuenta cuentaPrueba = new Cuenta("F",26216,
                 6,0,0);
-        cuentaPrueba.setSaldoCLP(cuentaPrueba.restaSaldoCLP(3));
+        cuentaPrueba.setSaldoCLP(cuentaPrueba.retirarSaldoCLP(3));
         assertEquals(3, cuentaPrueba.getSaldoCLP());
     }
 
